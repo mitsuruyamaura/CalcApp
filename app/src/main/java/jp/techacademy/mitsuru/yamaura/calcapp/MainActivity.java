@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditText1 = (EditText) findViewById(R.id.editText1);
         mEditText2 = (EditText) findViewById(R.id.editText2);
 
+    }
+
+    @Override
+    public void onClick(View v){
+
+        Intent intent = new Intent(this,SecondActivity.class);
+
         //  文字列を取得する
         String s1 =mEditText1.getText().toString();
         String s2 =mEditText2.getText().toString();
@@ -44,12 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //  float型にキャストする
         x = Float.parseFloat(s1);
         y = Float.parseFloat(s2);
-    }
-
-    @Override
-    public void onClick(View v){
-
-        Intent intent = new Intent(this,SecondActivity.class);
 
         //  押したボタンに合わせて条件分岐してTextViewに表示する
         if(v.getId() == R.id.button1){
