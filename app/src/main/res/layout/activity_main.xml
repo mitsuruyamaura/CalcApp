@@ -15,13 +15,15 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数字①を入力してください"
+        android:inputType="numberSigned|numberDecimal"
+        android:hint="数字①を入力してください"
         android:id="@+id/editText1"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数字①を入力してください"
+        android:inputType="numberSigned|numberDecimal"
+        android:hint="数字②を入力してください"
         android:id="@+id/editText2"/>
 
     <Button

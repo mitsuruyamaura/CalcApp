@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.TextView;
 
+
+
 public class SecondActivity extends AppCompatActivity {
 
     float value1;
