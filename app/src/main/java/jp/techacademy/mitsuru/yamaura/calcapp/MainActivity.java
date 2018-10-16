@@ -46,29 +46,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(this, SecondActivity.class);
 
-        //  文字列を取得する
+        //  文字列を取得する。数字以外の文字はmain.xmlで省いていある。
         String s1 = mEditText1.getText().toString();
         String s2 = mEditText2.getText().toString();
 
         //  ここで数字以外の文字が入力されたらcatchする
-        //try {
+        try {
             //  float型にキャストする
-            //x = Float.parseFloat(s1);
-            //y = Float.parseFloat(s2);
+            x = Float.parseFloat(s1);
+            y = Float.parseFloat(s2);
 
-        //} catch (NumberFormatException i) {
+        } catch (NumberFormatException i) {
             //  NumberFormatExceptionが出たらここで捕まえる
             //  iには例外の情報が入っている
-            //Snackbar.make(v, "残念。数字を入力してくださいね", Snackbar.LENGTH_INDEFINITE).show();
-            //return;
-        //}
+            Snackbar.make(v, "残念。数字を入力してくださいね", Snackbar.LENGTH_INDEFINITE).show();
+            return;
+        }
 
-        //  EditTextに文字の入力がない状態でボタンを操作した場合
+        //  EditTextに文字の入力がない状態でボタンを操作した場合。float変数は無効（元がtextなので）
         if(TextUtils.isEmpty(s1) || TextUtils.isEmpty(s2)) {
 
+            //  画面遷移せずに弾いてSnackBar表示
             Snackbar.make(v, "残念。数字を入力してくださいね", Snackbar.LENGTH_INDEFINITE).show();
             return;
 
+            //  文字入力されていたら
         }else {
 
             //  float型にキャストする
